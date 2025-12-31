@@ -2,7 +2,7 @@
 
 // ============ CONFIGURATION ============
 // Change this to your Render URL after deployment
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://spendwise-mvzm.onrender.com';
 // For local testing, use: 'http://localhost:5000/api'
 
 // ============ DOM ELEMENTS ============
