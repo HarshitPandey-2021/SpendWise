@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // GET all expenses
-app.get('/expenses', (req, res) => {
+app.get('/api/expenses', (req, res) => {
     const sql = 'SELECT * FROM expenses ORDER BY date DESC';
     
     db.all(sql, [], (err, rows) => {
