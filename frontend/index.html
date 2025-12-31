@@ -1,0 +1,73 @@
+<!-- frontend/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>💰 Campus Expense Tracker</h1>
+            <p>Track your daily expenses smartly</p>
+        </header>
+
+        <!-- Total Card -->
+        <div class="total-card">
+            <span class="label">Total Spent</span>
+            <span class="amount" id="totalAmount">₹0.00</span>
+        </div>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Add Expense Form -->
+            <section class="card">
+                <h2>➕ Add Expense</h2>
+                <form id="expenseForm">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" id="title" placeholder="What did you spend on?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount" placeholder="0.00" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="Food">🍔 Food</option>
+                            <option value="Transport">🚌 Transport</option>
+                            <option value="Shopping">🛒 Shopping</option>
+                            <option value="Entertainment">🎮 Entertainment</option>
+                            <option value="Bills">💡 Bills</option>
+                            <option value="Other">📦 Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submitBtn">Add Expense</button>
+                </form>
+            </section>
+
+            <!-- Expense List -->
+            <section class="card">
+                <h2>📋 Recent Expenses</h2>
+                <div id="expenseList">
+                    <p class="empty-state">No expenses yet. Add one!</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built by <strong>Harshit Pandey</strong> | 
+                <a href="https://github.com/HarshitPandey-2021" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

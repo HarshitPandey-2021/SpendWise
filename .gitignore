@@ -1,0 +1,22 @@
+# backend/.gitignore content - create in ROOT folder
+
+# Dependencies
+node_modules/
+
+# Database (will be created on server)
+*.db
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
