@@ -1,33 +1,4 @@
-# Yes! README.md Will Show on GitHub! 🎯
 
-When you commit `README.md` to your repo, it automatically displays on your GitHub repository page!
-
----
-
-## How It Works:
-
-```
-Your Repo Structure:
-SpendWise/
-├── frontend/
-├── backend/
-└── README.md    ← This file shows on GitHub homepage!
-```
-
-When someone visits:
-```
-https://github.com/HarshitPandey-2021/SpendWise
-```
-
-They see your README.md content **right below the file list**! 
-
----
-
-## Professional README Template for SpendWise
-
-Copy this into your `README.md`:
-
-```markdown
 # 💰 SpendWise - Personal Expense Tracker
 
 A full-stack web application for tracking daily expenses with a clean, modern interface.
@@ -223,14 +194,6 @@ Frontend will run on `http://localhost:3000` (or `http://localhost:5500` with Li
 - **No Authentication:** Single-user application without login system
 - **No Data Visualization:** Currently displays data in list format only
 
-### Future Improvements
-- [ ] Add user authentication
-- [ ] Implement data visualization (charts/graphs)
-- [ ] Export expenses to CSV/PDF
-- [ ] Add expense editing functionality
-- [ ] Migrate to PostgreSQL for persistent storage
-- [ ] Add date range filtering
-- [ ] Implement expense categories customization
 
 ---
 
@@ -281,21 +244,3 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **⭐ If you found this project helpful, please consider giving it a star!**
 ```
-
-
-### Add Badges (Optional but Looks Professional)
-
-At the top of README, you can add:
-
-```markdown
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-000000?style=flat&logo=express&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
-```
-
-These create colored badges like:
-
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
