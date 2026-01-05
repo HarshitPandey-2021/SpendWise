@@ -60,6 +60,53 @@
             </section>
         </main>
 
+          <!-- Analytics Section (NEW) -->
+    <section class="analytics-section">
+        <h2>📊 Spending Analytics</h2>
+        
+        <div class="sample-data-notice" id="sampleNotice">
+            <p>📌 <strong>Sample Data:</strong> Showing demo visualization. Add your expenses to see real data!</p>
+        </div>
+        
+        <div class="charts-container">
+            <!-- Pie Chart -->
+            <div class="chart-card">
+                <h3>Category Breakdown</h3>
+                <canvas id="categoryPieChart"></canvas>
+            </div>
+            
+            <!-- Bar Chart -->
+            <div class="chart-card">
+                <h3>Spending by Category</h3>
+                <canvas id="categoryBarChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+<!-- NEW: Report Generation Section -->
+    <section class="report-section">
+        <h2>📄 Generate Reports</h2>
+        
+        <div class="report-actions">
+            <button class="btn-report" onclick="downloadCSV()">
+                📥 Download CSV Report
+            </button>
+            <button class="btn-report" onclick="showAnalyticsReport()">
+                📊 View Analytics Report
+            </button>
+        </div>
+
+        <!-- Report Display Area -->
+        <div id="reportDisplay" class="report-display hidden">
+            <div class="report-header">
+                <h3>📊 Expense Analytics Report</h3>
+                <button class="close-btn" onclick="closeReport()">✖</button>
+            </div>
+            <div id="reportContent" class="report-content">
+                <!-- Report will be inserted here -->
+            </div>
+        </div>
+    </section>
         <!-- Footer -->
         <footer>
             <p>Built by <strong>Harshit Pandey</strong> | 
@@ -67,7 +114,8 @@
             </p>
         </footer>
     </div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
+    
 </body>
 </html>
