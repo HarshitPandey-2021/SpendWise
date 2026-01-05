@@ -1,7 +1,6 @@
+# 💰 SpendWise - Full-Stack Expense Tracker
 
-# 💰 SpendWise - Personal Expense Tracker
-
-A full-stack web application for tracking daily expenses with a clean, modern interface.
+A comprehensive expense management application with real-time analytics, interactive visualizations, and multi-language data processing.
 
 [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://spenwisee.netlify.app/)
 [![GitHub](https://img.shields.io/badge/github-repository-blue)](https://github.com/HarshitPandey-2021/SpendWise)
@@ -13,234 +12,177 @@ A full-stack web application for tracking daily expenses with a clean, modern in
 - **Frontend:** [https://spenwisee.netlify.app/](https://spenwisee.netlify.app/)
 - **Backend API:** [https://spendwise-mvzm.onrender.com/](https://spendwise-mvzm.onrender.com/)
 
-> **Note:** Backend is hosted on Render's free tier and may take 30-60 seconds to wake up on first request.
-
+> ⚠️ **Note:** Backend hosted on Render's free tier. First load may take 30-60s. App auto-wakes server and displays sample data during this time.
 
 ---
 
 ## ✨ Features
 
-- ✅ Add expenses with title, amount, and category
-- 📊 View all expenses in an organized list
-- 🗑️ Delete expenses with confirmation
-- 💰 Real-time total calculation
-- 📱 Fully responsive design (mobile & desktop)
-- 🌙 Modern dark theme UI
-- ⚡ Fast and lightweight
+- ✅ **Smart Expense Management** - Add, view, delete expenses with real-time updates
+- 💰 **Live Calculations** - Instant total across all categories
+- 📊 **Interactive Charts** - Pie & bar visualizations using Chart.js
+- 📥 **CSV Export** - One-click download of expense data
+- 📄 **Analytics Reports** - Comprehensive in-app statistics
+- 🎯 **Demo Mode** - Sample data for first-time visitors
+- 📱 **Responsive Design** - Works on mobile, tablet, desktop
+- 🐍 **Python Analytics** - Offline data analysis suite
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **HTML5** - Structure and semantic markup
-- **CSS3** - Styling with modern layouts (Flexbox/Grid)
-- **JavaScript (ES6+)** - Client-side logic and API integration
-
-### Backend
-- **Node.js** - JavaScript runtime
-- **Express.js** - Web framework for REST API
-- **SQLite** - Lightweight relational database
-
-### Deployment
-- **Netlify** - Frontend hosting with CDN
-- **Render.com** - Backend hosting with automatic deployments
-
-### Tools
-- **Git & GitHub** - Version control
-- **Postman** - API testing
-- **VS Code** - Development environment
+**Frontend:** HTML5, CSS3, JavaScript (ES6+), Chart.js  
+**Backend:** Node.js, Express.js, SQLite  
+**Analytics:** Python, Pandas, Matplotlib  
+**Deployment:** Netlify (frontend), Render (backend)
 
 ---
 
 ## 📁 Project Structure
 
-```
-SpendWise/
-├── frontend/
-│   ├── index.html          # Main HTML structure
-│   ├── style.css           # Styling and responsive design
-│   └── script.js           # Client-side logic and API calls
-├── backend/
-│   ├── index.js            # Express server and API routes
-│   ├── database.js         # SQLite database configuration
-│   ├── package.json        # Dependencies and scripts
-│   └── expenses.db         # SQLite database (auto-generated)
-├── .gitignore              # Ignored files (node_modules, .db)
-└── README.md               # Project documentation
-```
+SpendWise/  
+├── frontend/  
+│   ├── index.html  
+│   ├── style.css  
+│   └── script.js  
+├── backend/  
+│   ├── index.js  
+│   ├── database.js  
+│   └── package.json  
+├── python_utils/  
+│   ├── export_data.py  
+│   ├── analyze_expenses.py  
+│   └── visualize.py  
+└── README.md
 
 ---
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description | Request Body | Response |
-|--------|----------|-------------|--------------|----------|
-| GET | `/` | Health check | - | `{ "message": "API running" }` |
-| GET | `/api/expenses` | Get all expenses | - | Array of expense objects |
-| POST | `/api/expenses` | Add new expense | `{ title, amount, category }` | Created expense object |
-| DELETE | `/api/expenses/:id` | Delete expense | - | `{ "message": "Deleted" }` |
-| GET | `/api/stats` | Get category totals | - | Array of category aggregations |
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | Health check |
+| GET | `/api/expenses` | Get all expenses |
+| POST | `/api/expenses` | Add new expense |
+| DELETE | `/api/expenses/:id` | Delete expense |
+| GET | `/api/stats` | Category totals |
 
-### Example API Request
-
+**Example:**
 ```javascript
-// Add new expense
 fetch('https://spendwise-mvzm.onrender.com/api/expenses', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    title: 'Lunch',
-    amount: 150,
-    category: 'Food'
-  })
+  body: JSON.stringify({ title: 'Lunch', amount: 150, category: 'Food' })
 })
-```
-
 ---
 
 ## 🏃 Run Locally
 
-### Prerequisites
-- Node.js (v14 or higher)
-- npm (comes with Node.js)
-
-### Backend Setup
-
+### Backend
 ```bash
-# Navigate to backend folder
 cd backend
-
-# Install dependencies
 npm install
-
-# Start server
 node index.js
+# Runs at http://localhost:5000
 ```
 
-Server will run on `http://localhost:5000`
-
-### Frontend Setup
-
+### Frontend
 ```bash
-# Navigate to frontend folder
 cd frontend
-
-# Option 1: Open directly
-# Just open index.html in your browser
-
-# Option 2: Use Live Server (recommended)
-# Install Live Server extension in VS Code
-# Right-click index.html → "Open with Live Server"
-
-# Option 3: Use Python's built-in server
-python -m http.server 3000
+# Option 1: Open index.html in browser
+# Option 2: Use Live Server extension in VS Code
+# Option 3: python -m http.server 3000
 ```
 
-Frontend will run on `http://localhost:3000` (or `http://localhost:5500` with Live Server)
+### Python Analytics (Optional)
+```bash
+cd python_utils
+pip install -r requirements.txt
+python export_data.py      # CSV export
+python analyze_expenses.py # Analytics
+python visualize.py        # PNG charts
+```
 
 ---
 
 ## 🌐 Deployment
 
-### Deploy Frontend (Netlify)
+**Frontend (Netlify):**
+1. Drag `frontend` folder to [netlify.com](https://netlify.com)
+2. Site goes live instantly
 
-1. Go to [netlify.com](https://netlify.com)
-2. Drag and drop the `frontend` folder
-3. Your site is live!
+**Backend (Render):**
+1. New Web Service on [render.com](https://render.com)
+2. Settings: `Root: backend`, `Build: npm install`, `Start: node index.js`
+3. Update `API_URL` in `frontend/script.js` with Render URL
 
-### Deploy Backend (Render)
+---
 
-1. Go to [render.com](https://render.com)
-2. Create new **Web Service**
-3. Connect your GitHub repository
-4. Settings:
-   - **Root Directory:** `backend`
-   - **Build Command:** `npm install`
-   - **Start Command:** `node index.js`
-5. Deploy!
+## 📊 Features Breakdown
+
+### Web Analytics
+- **Real-time Charts:** Pie (proportions) & Bar (comparisons)
+- **CSV Export:** Browser-based, no server needed
+- **Analytics Modal:** Stats, breakdowns, trends
+
+### Python Suite
+- **export_data.py:** CSV + summary statistics
+- **analyze_expenses.py:** JSON reports, trend analysis
+- **visualize.py:** PNG charts (Matplotlib)
 
 ---
 
 ## 🧠 What I Learned
 
-### Technical Skills
-- Building REST APIs with Express.js
-- Database design and SQL queries
-- Asynchronous JavaScript (async/await, Promises)
-- DOM manipulation and event handling
-- CORS configuration for cross-origin requests
-- Deployment and DevOps basics
-
-### Problem-Solving
-- Debugging CORS errors
-- Managing asynchronous API calls
-- Handling edge cases and error states
-- Understanding client-server architecture
-
-### Best Practices
-- Writing clean, readable code
-- Parameterized SQL queries (SQL injection prevention)
-- Input validation on both client and server
-- Proper error handling and user feedback
-- Version control with Git
+- Full-stack architecture (frontend ↔ API ↔ database)
+- RESTful API design with Express.js
+- Asynchronous JavaScript (async/await, Fetch API)
+- Data visualization with Chart.js
+- SQL queries and parameterization
+- Multi-language integration (JS ↔ Python)
+- Deployment and DevOps (Netlify, Render)
+- CORS handling, error management
+- UX optimizations (auto-wake, sample data)
 
 ---
 
-## 🐛 Known Issues & Limitations
+## 🐛 Known Issues
 
-- **Data Persistence:** Database resets on Render server restart (ephemeral storage on free tier)
-- **First Load Delay:** Backend may take 30-60s to wake up from sleep on Render free tier
-- **No Authentication:** Single-user application without login system
-- **No Data Visualization:** Currently displays data in list format only
+| Issue | Workaround |
+|-------|------------|
+| Data resets on server restart | Render free tier uses ephemeral storage |
+| 30-60s first load | Auto-wake + sample data display |
+| No user authentication | Single-user design (for now) |
 
+**Production upgrades:** PostgreSQL, JWT auth, paid hosting, caching
 
 ---
 
 ## 🤝 Contributing
 
-This is a learning project, but suggestions are welcome!
+Contributions welcome! Fork → Branch → PR
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
+**Ideas:** User auth, expense editing, budget limits, date filtering, PDF export
 
 ---
 
 ## 👨‍💻 Author
 
-**Harshit Pandey**
+**Harshit Pandey**  
+B.Tech CS (AI) - University of Lucknow
 
-- 🎓 B.Tech Computer Science (AI) - University of Lucknow
-- 💼 [LinkedIn](https://linkedin.com/in/harshit-pandey-236830247)
-- 🐙 [GitHub](https://github.com/HarshitPandey-2021)
-- 📧 [Email](mailto:pandey6051172@gmail.com)
-
----
-
-## 🙏 Acknowledgments
-
-- Built as a learning project to understand full-stack web development
-- Inspired by the need for simple expense tracking solutions
-- Thanks to the open-source community for documentation and resources
+- [LinkedIn](https://linkedin.com/in/harshit-pandey-236830247)
+- [GitHub](https://github.com/HarshitPandey-2021)
+- [Email](mailto:pandey6051172@gmail.com)
 
 ---
 
-## 📊 Project Stats
+## 📊 Stats
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/HarshitPandey-2021/SpendWise)
+![GitHub last commit](https://img.shields.io/github/last-commit/HarshitPandey-2021/SpendWise)
 ![GitHub stars](https://img.shields.io/github/stars/HarshitPandey-2021/SpendWise?style=social)
-![GitHub forks](https://img.shields.io/github/forks/HarshitPandey-2021/SpendWise?style=social)
 
 ---
 
-**⭐ If you found this project helpful, please consider giving it a star!**
-```
+⭐ **Star this repo if you found it helpful!**
